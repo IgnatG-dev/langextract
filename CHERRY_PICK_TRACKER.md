@@ -26,7 +26,7 @@ These fixes are already part of the fork's `main` branch:
 
 | Status | PR | Title | Impact | Notes |
 |--------|----|-------|--------|-------|
-| [x] | [#351](https://github.com/google/langextract/pull/351) | Fix: Matching built-in providers fails if specified by name (Fixes #335) | Ensures `providers.load_builtins_once()` runs before provider resolution. Affects our `langextract-mistral` plugin loading. | Size XS. Applied manually. |
+| [x] | [#351](https://github.com/google/langextract/pull/351) | Fix: Matching built-in providers fails if specified by name (Fixes #335) | Ensures `providers.load_builtins_once()` runs before provider resolution. Affects our `langextract-litellm` plugin loading. | Size XS. Applied manually. |
 | [x] | [#349](https://github.com/google/langextract/pull/349) | Fix: Correctly load built-in providers when using explicit 'provider' in ModelConfig | Related to #351 — same provider loading issue from a different angle. | Size S. Same fix as #351. |
 | [x] | [#327](https://github.com/google/langextract/pull/327) | Add `require_grounding` parameter to filter ungrounded extractions | Filters extractions where `char_interval is None` (hallucinated from few-shot). Directly improves extraction quality for our 3-pass, 12-class setup. | Size M. Fixes #209. |
 | [x] | [#375](https://github.com/google/langextract/pull/375) | Fix: continue extraction when chunk resolve/alignment fails | Adds opt-in `suppress_parse_errors` at annotation level to skip per-chunk failures. Complements our resolver dict-skip fix. | Applied as `c2bd1bb`. Merged with our `require_grounding` parameter from PR #327. |
